@@ -11,25 +11,25 @@ struct Cli {
 }
 
 #[derive(Subcommand)]
-enum Actions{
-    Set {key: String, value: String},
-    Get {key: String},
-    Rm {key: String},
+enum Actions {
+    Set { key: String, value: String },
+    Get { key: String },
+    Rm { key: String },
 }
 
 fn main() {
     let cli = Cli::parse();
 
-    std::process::exit(match &cli.action{
-        Actions::Set{..} =>{
+    std::process::exit(match &cli.action {
+        Actions::Set { .. } => {
             eprintln!("unimplemented");
             1
-        },
-        Actions::Get{..} =>{
+        }
+        Actions::Get { .. } => {
             eprintln!("unimplemented");
             1
-        },
-        Actions::Rm{..} =>{
+        }
+        Actions::Rm { .. } => {
             eprintln!("unimplemented");
             1
         }
